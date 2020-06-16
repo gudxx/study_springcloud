@@ -1,0 +1,13 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: study-consumer    #将来作为eureka名称
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    fetch-registry: true
+    registry-fetch-interval-seconds: 5    #每隔5s更新服务

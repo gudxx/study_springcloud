@@ -1,0 +1,27 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: study-feign
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    fetch-registry: true
+    registry-fetch-interval-seconds: 5
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000       # hystrix超时时间
+
+
+feign:
+  hystrix:
+    enabled: true     #在feign里面开启熔断必须为true

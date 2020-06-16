@@ -1,0 +1,16 @@
+server:
+  port: 10086
+
+spring:
+  application:
+    name: study-eureka   # 将来作为微服务名称注入到eureka容器
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10087/eureka
+  server:
+    eviction-interval-timer-in-ms: 5000   #剔除无效连接的间隔时间
+    enable-self-preservation: false   #关闭自我保护状态，(默认情况下，关停一个服务，
+                                      #eureka面板会看到一条警告，而不会立刻关闭)
+
+
